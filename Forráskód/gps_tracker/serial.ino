@@ -114,5 +114,5 @@ void spiffsSerialPrintInfo(void) {
     }
     entry.close();
   }
-  Serial.println();
+  Serial.println(); // ez egy commet
 }
