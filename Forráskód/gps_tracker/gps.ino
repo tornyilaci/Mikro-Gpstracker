@@ -8,7 +8,7 @@ void gpsSerialPrintInfo(void) {
   Serial.print(F(" "));
 
   if (gps.time.isValid()) {
-    sprintf(buf, "%02d:%02d:%02d.%02d", (gps.time.hour()+UTC_OFFSET_HOUR) % 24, gps.time.minute(), gps.time.second(), gps.time.centisecond());
+    sprintf(buf, "%02d:%02d:%02d", (gps.time.hour()+UTC_OFFSET_HOUR) % 24, gps.time.minute(), gps.time.second());
     Serial.print(buf);  
   } else
     Serial.print(F("00:00:00.00"));
@@ -40,6 +40,9 @@ void gpsSaveToFile(void) {
   if (gps.location.isValid())
     sprintf(s, "\"%.6f\",\"%.6f\"\n", gps.location.lat(), gps.location.lng()); else   // "%f" == double
     sprintf(s, "\"?\",\"?\"\n");
+  if (gps.speed.isValid())
+    sprintf(s, "%.0f", gps.speed.kmph()); else
+    sprintf(buf, "-");
   Serial.print(F("Writing position to file: "));
   Serial.print(buf);
   
