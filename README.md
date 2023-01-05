@@ -7,9 +7,21 @@ Mikroelektromechanikai rendszerek (GKNB_INTM020)
 Itt találhatod a leírását egy GPS nyomkövető arduino projektnek.
   
   Főbb jellemzők
+
 - Helyzetmeghatározás
 - Dátum, idő
+- Sebesség mutatása
+- Adatok mentése, adatok felhasználása, adatok törlése
+- Helyzet elküldése SMS-ben
+- Wifi AP
 
-Ez a repository lesz a Mikroelektromechanikai rendszerek órára a projekt helye.
+  Hogyan használd?
+Lásd: Documentation mappában található használati utasítás.
+
+Felhasznált programok: 
+- Arduino IDE 1.8.19 --> kód
+- Fritzing --> műszaki rajz
+- Google My Maps (https://www.google.com/maps/d/) --> Adatvizualizálás
+
 Készítették:  Tornyossy László SL9W96
               Kónya Kristóf F6LB0N
