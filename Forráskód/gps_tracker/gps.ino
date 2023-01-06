@@ -2,27 +2,29 @@ void gpsSerialPrintInfo(void) {
   if (gps.date.isValid()) {
     sprintf(buf, "%04d.%02d.%02d.", gps.date.year(), gps.date.month(), gps.date.day());
     Serial.print(buf);
-  } else
+  } 
+  else
     Serial.print(F("0000.00.00."));
-  
   Serial.print(F(" "));
-
   if (gps.time.isValid()) {
-    sprintf(buf, "%02d:%02d:%02d", (gps.time.hour()+UTC_OFFSET_HOUR) % 24, gps.time.minute(), gps.time.second());
+    sprintf(buf, "%02d:%02d:%02d.%02d", (gps.time.hour()+UTC_OFFSET_HOUR) % 24, gps.time.minute(), gps.time.second(), gps.time.centisecond());
     Serial.print(buf);  
-  } else
+  } 
+  else
     Serial.print(F("00:00:00.00"));
-  
   Serial.print(" ");
-
   if (gps.location.isValid()) {
     Serial.print(gps.location.lat(), 6);
     Serial.print(F(","));
     Serial.print(gps.location.lng(), 6);
   } else
     Serial.print(F("0,0"));
-
   Serial.println();
+}
+
+void gpsIsOnWay(void) {
+  if (gps.speed.isValid()and gps.speed.kmph()>10)
+    sprintf(buf, "%.0f", gps.speed.kmph());
 }
 
 void gpsSaveToFile(void) {
@@ -40,9 +42,6 @@ void gpsSaveToFile(void) {
   if (gps.location.isValid())
     sprintf(s, "\"%.6f\",\"%.6f\"\n", gps.location.lat(), gps.location.lng()); else   // "%f" == double
     sprintf(s, "\"?\",\"?\"\n");
-  if (gps.speed.isValid())
-    sprintf(s, "%.0f", gps.speed.kmph()); else
-    sprintf(buf, "-");
   Serial.print(F("Writing position to file: "));
   Serial.print(buf);
   
