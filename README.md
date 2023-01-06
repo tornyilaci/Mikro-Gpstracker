@@ -15,8 +15,8 @@ Itt találhatod a leírását egy GPS nyomkövető arduino projektnek.
 - Helyzet elküldése SMS-ben
 - Wifi AP
 
-  Hogyan használd?
-Lásd: Documentation mappában található használati utasítás.
+Hogyan használd?
+  Lásd: Documentation mappában található használati utasítás.
 
 Felhasznált programok: 
 - Arduino IDE 1.8.19 --> kód
