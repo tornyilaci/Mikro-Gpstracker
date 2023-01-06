@@ -23,6 +23,4 @@ Felhasznált programok:
 - Fritzing --> műszaki rajz
 - Google My Maps (https://www.google.com/maps/d/) --> Adatvizualizálás
 
-Készítették:  Tornyossy László SL9W96
-
-              Kónya Kristóf F6LB0N
+Készítették:  Tornyossy László SL9W96, Kónya Kristóf F6LB0N
