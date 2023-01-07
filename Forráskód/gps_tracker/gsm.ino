@@ -11,8 +11,6 @@ void gsmReceiveMode(void) {
 void gsmSendSMS(void) {
   char *s = buf;
   memset(buf, 0, sizeof(buf));
-  if (gps.speed.isValid()and gps.speed.kmph()<10)
-    break;
   if (gps.date.isValid())
     sprintf(s, "%04d.%02d.%02d. ", gps.date.year(), gps.date.month(), gps.date.day()); else
     sprintf(s, "0000.00.00. ");
